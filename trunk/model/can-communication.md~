@@ -580,7 +580,7 @@
 				supplier   	@1
 				vertices   	(list Points
 				    (637, 295)
-				    (849, 216))
+				    (1008, 160))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$2" @7
 				Parent_View 	@5
@@ -592,7 +592,7 @@
 				supplier   	@4
 				vertices   	(list Points
 				    (637, 295)
-				    (425, 375))
+				    (425, 374))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$3" @8
 			location   	(661, 400)
@@ -619,7 +619,7 @@
 				supplier   	@2
 				vertices   	(list Points
 				    (661, 400)
-				    (898, 400))
+				    (896, 400))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$5" @10
 				Parent_View 	@8
@@ -658,7 +658,7 @@
 				supplier   	@3
 				vertices   	(list Points
 				    (653, 530)
-				    (882, 636))
+				    (882, 635))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$11" @13
 				Parent_View 	@11
@@ -670,7 +670,7 @@
 				supplier   	@4
 				vertices   	(list Points
 				    (653, 530)
-				    (425, 425))
+				    (425, 424))
 				line_style 	0)))))
 	    (object UseCaseDiagram "Éè¶¨²Ù×÷"
 		quid       	"519337A701B8"
@@ -2823,49 +2823,7 @@
 					exportControl 	"Public"
 					logical_models 	(list unit_reference_list
 					    (object Class "Command"
-						attributes 	(list Attribute_Set)
 						quid       	"519475FF02D4"
-						operations 	(list Operations
-						    (object Operation "Command"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
-							quid       	"51947759033B"
-							concurrency 	"Sequential"
-							opExportControl 	"Public"
-							uid        	0)
-						    (object Operation "Command"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
-							quid       	"51947F830272"
-							parameters 	(list Parameters
-							    (object Parameter "_newCmd"
-								quid       	"51947F900395"
-								type       	"String"
-								quidu      	"3E400BED00EF"))
-							concurrency 	"Sequential"
-							opExportControl 	"Public"
-							uid        	0))
-						class_attributes 	(list class_attribute_list
-						    (object ClassAttribute "_flag"
-							quid       	"51947DF50342"
-							type       	"String"
-							quidu      	"3E400BED00EF")
-						    (object ClassAttribute "_dataString"
-							quid       	"51947E550299"
-							type       	"String[]"
-							quidu      	"3E400BED00EF")
-						    (object ClassAttribute "_dataInt"
-							quid       	"51947E7B0172"
-							type       	"Integer[]"
-							quidu      	"3E400C0C02A2"))
-						module     	"Component View::com::tju::CanCommunication::Communication::Command"
-						quidu      	"519477530161"
 						language   	"Java")
 					    (object Class "CmdCommunication"
 						attributes 	(list Attribute_Set
@@ -2923,159 +2881,21 @@
 							value      	("Ctor_Set" 62)))
 						quid       	"5194761D00FF"
 						stereotype 	"Interface"
-						used_nodes 	(list uses_relationship_list
-						    (object Uses_Relationship
-							quid       	"51947D030287"
-							supplier   	"Logical View::com::tju::CanCommunication::Communication::Command"
-							quidu      	"519475FF02D4")
-						    (object Uses_Relationship
-							quid       	"51947D0600AF"
-							supplier   	"Logical View::com::tju::CanCommunication::Communication::ReceiveAnswer"
-							quidu      	"51947A130287"))
 						operations 	(list Operations
 						    (object Operation "sendCommand"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
 							quid       	"519476840366"
-							parameters 	(list Parameters
-							    (object Parameter "_sendcmd"
-								quid       	"51947CD003C3"
-								type       	"Command"
-								quidu      	"519475FF02D4"))
-							result     	"ReceiveAnswer"
 							concurrency 	"Sequential"
 							opExportControl 	"Public"
-							uid        	0
-							quidu      	"51947A130287"))
-						module     	"Component View::com::tju::CanCommunication::Communication::CmdCommunication"
-						quidu      	"519477530171"
+							uid        	0))
 						language   	"Java")
 					    (object Class "Rs232Command"
 						attributes 	(list Attribute_Set)
 						quid       	"5194769902C8"
-						realized_interfaces 	(list realize_rel_list
-						    (object Realize_Relationship
-							quid       	"51947738024B"
+						superclasses 	(list inheritance_relationship_list
+						    (object Inheritance_Relationship
+							quid       	"519476AD02F6"
 							supplier   	"Logical View::com::tju::CanCommunication::Communication::CmdCommunication"
 							quidu      	"5194761D00FF"))
-						operations 	(list Operations
-						    (object Operation "Rs232Command"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
-							quid       	"5194775903C8"
-							concurrency 	"Sequential"
-							opExportControl 	"Public"
-							uid        	0)
-						    (object Operation "getCmd"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
-							quid       	"51947BEA02F1"
-							result     	"Command"
-							concurrency 	"Sequential"
-							opExportControl 	"Public"
-							uid        	0
-							quidu      	"519475FF02D4")
-						    (object Operation "setCmd"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
-							quid       	"51947BFA01EE"
-							parameters 	(list Parameters
-							    (object Parameter "newCmd"
-								quid       	"51947C22019E"
-								type       	"Command"
-								quidu      	"519475FF02D4"))
-							result     	"void"
-							concurrency 	"Sequential"
-							opExportControl 	"Public"
-							uid        	0)
-						    (object Operation "getAns"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
-							quid       	"51947C55038E"
-							result     	"ReceiveAnswer"
-							concurrency 	"Sequential"
-							opExportControl 	"Public"
-							uid        	0
-							quidu      	"51947A130287")
-						    (object Operation "sendCommand"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"Synchronized"
-								value      	FALSE)
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
-							quid       	"51947F3A016B"
-							parameters 	(list Parameters
-							    (object Parameter "_sendcmd"
-								quid       	"51947F3A017B"
-								type       	"Command"
-								quidu      	"519475FF02D4"))
-							result     	"ReceiveAnswer"
-							concurrency 	"Sequential"
-							opExportControl 	"Public"
-							uid        	0
-							quidu      	"51947A130287"))
-						class_attributes 	(list class_attribute_list
-						    (object ClassAttribute "_cmd"
-							quid       	"51947BA601E8"
-							type       	"Command"
-							quidu      	"519475FF02D4")
-						    (object ClassAttribute "_ans"
-							quid       	"51947BB903DC"
-							type       	"ReceiveAnswer"
-							quidu      	"51947A130287"))
-						module     	"Component View::com::tju::CanCommunication::Communication::Rs232Command"
-						quidu      	"519477530180"
-						language   	"Java")
-					    (object Class "ReceiveAnswer"
-						attributes 	(list Attribute_Set)
-						quid       	"51947A130287"
-						operations 	(list Operations
-						    (object Operation "ReceiveAnswer"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
-							quid       	"51947A51001E"
-							concurrency 	"Sequential"
-							opExportControl 	"Public"
-							uid        	0)
-						    (object Operation "ReceiveAnswer"
-							attributes 	(list Attribute_Set
-							    (object Attribute
-								tool       	"Java"
-								name       	"GenerateFullyQualifiedThrows"
-								value      	""))
-							quid       	"51947FB20284"
-							parameters 	(list Parameters
-							    (object Parameter "_ansStr"
-								quid       	"51947FC9000F"
-								type       	"String"
-								quidu      	"3E400BED00EF"))
-							concurrency 	"Sequential"
-							opExportControl 	"Public"
-							uid        	0))
-						module     	"Component View::com::tju::CanCommunication::Communication::ReceiveAnswer"
-						quidu      	"51947F390054"
 						language   	"Java"))
 					logical_presentations 	(list unit_reference_list
 					    (object ClassDiagram "Main"
@@ -3091,7 +2911,7 @@
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
-							location   	(1136, 192)
+							location   	(1440, 224)
 							font       	(object Font
 							    size       	10
 							    face       	"Arial"
@@ -3103,43 +2923,25 @@
 							    default_color 	TRUE)
 							label      	(object ItemLabel
 							    Parent_View 	@106
-							    location   	(919, 11)
+							    location   	(1325, 173)
 							    fill_color 	13434879
 							    nlines     	1
-							    max_width  	434
+							    max_width  	230
 							    justify    	0
 							    label      	"Command")
 							icon_style 	"Icon"
 							line_color 	3342489
 							fill_color 	13434879
 							quidu      	"519475FF02D4"
-							compartment 	(object Compartment
-							    Parent_View 	@106
-							    location   	(919, 72)
-							    font       	(object Font
-								size       	10
-								face       	"Arial"
-								bold       	FALSE
-								italics    	FALSE
-								underline  	FALSE
-								strike     	FALSE
-								color      	0
-								default_color 	TRUE)
-							    icon_style 	"Icon"
-							    fill_color 	13434879
-							    anchor     	2
-							    nlines     	6
-							    max_width  	431
-							    justify    	1)
-							width      	452
-							height     	386
+							width      	248
+							height     	126
 							annotation 	8
 							autoResize 	TRUE)
 						    (object ClassView "Class" "Logical View::com::tju::CanCommunication::Communication::CmdCommunication" @107
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
-							location   	(1568, 736)
+							location   	(944, 96)
 							font       	(object Font
 							    size       	10
 							    face       	"Arial"
@@ -3151,7 +2953,7 @@
 							    default_color 	TRUE)
 							label      	(object ItemLabel
 							    Parent_View 	@107
-							    location   	(1567, 844)
+							    location   	(943, 204)
 							    anchor_loc 	1
 							    nlines     	2
 							    max_width  	382
@@ -3164,7 +2966,7 @@
 							quidu      	"5194761D00FF"
 							compartment 	(object Compartment
 							    Parent_View 	@107
-							    location   	(1392, 885)
+							    location   	(768, 245)
 							    font       	(object Font
 								size       	10
 								face       	"Arial"
@@ -3187,7 +2989,7 @@
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
-							location   	(928, 1296)
+							location   	(656, 736)
 							font       	(object Font
 							    size       	10
 							    face       	"Arial"
@@ -3199,115 +3001,29 @@
 							    default_color 	TRUE)
 							label      	(object ItemLabel
 							    Parent_View 	@108
-							    location   	(700, 1065)
+							    location   	(483, 685)
 							    fill_color 	13434879
 							    nlines     	1
-							    max_width  	456
+							    max_width  	346
 							    justify    	0
 							    label      	"Rs232Command")
 							icon_style 	"Icon"
 							line_color 	3342489
 							fill_color 	13434879
 							quidu      	"5194769902C8"
-							compartment 	(object Compartment
-							    Parent_View 	@108
-							    location   	(700, 1126)
-							    font       	(object Font
-								size       	10
-								face       	"Arial"
-								bold       	FALSE
-								italics    	FALSE
-								underline  	FALSE
-								strike     	FALSE
-								color      	0
-								default_color 	TRUE)
-							    icon_style 	"Icon"
-							    fill_color 	13434879
-							    anchor     	2
-							    nlines     	8
-							    max_width  	459
-							    justify    	1)
-							width      	474
-							height     	486
+							width      	364
+							height     	126
 							annotation 	8
 							autoResize 	TRUE)
-						    (object RealizeView "" @109
+						    (object InheritView "" @109
 							stereotype 	TRUE
 							line_color 	3342489
-							quidu      	"51947738024B"
+							quidu      	"519476AD02F6"
 							client     	@108
 							supplier   	@107
 							vertices   	(list Points
-							    (1165, 1088)
-							    (1391, 890))
-							line_style 	0)
-						    (object ClassView "Class" "Logical View::com::tju::CanCommunication::Communication::ReceiveAnswer" @110
-							ShowCompartmentStereotypes 	TRUE
-							IncludeAttribute 	TRUE
-							IncludeOperation 	TRUE
-							location   	(2144, 320)
-							font       	(object Font
-							    size       	10
-							    face       	"Arial"
-							    bold       	FALSE
-							    italics    	FALSE
-							    underline  	FALSE
-							    strike     	FALSE
-							    color      	0
-							    default_color 	TRUE)
-							label      	(object ItemLabel
-							    Parent_View 	@110
-							    location   	(1967, 214)
-							    fill_color 	13434879
-							    nlines     	1
-							    max_width  	354
-							    justify    	0
-							    label      	"ReceiveAnswer")
-							icon_style 	"Icon"
-							line_color 	3342489
-							fill_color 	13434879
-							quidu      	"51947A130287"
-							compartment 	(object Compartment
-							    Parent_View 	@110
-							    location   	(1967, 275)
-							    font       	(object Font
-								size       	10
-								face       	"Arial"
-								bold       	FALSE
-								italics    	FALSE
-								underline  	FALSE
-								strike     	FALSE
-								color      	0
-								default_color 	TRUE)
-							    icon_style 	"Icon"
-							    fill_color 	13434879
-							    anchor     	2
-							    nlines     	3
-							    max_width  	353
-							    justify    	1)
-							width      	372
-							height     	236
-							annotation 	8
-							autoResize 	TRUE)
-						    (object UsesView "" @111
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"51947D030287"
-							client     	@107
-							supplier   	@106
-							vertices   	(list Points
-							    (1545, 708)
-							    (1289, 385))
-							line_style 	0)
-						    (object UsesView "" @112
-							stereotype 	TRUE
-							line_color 	3342489
-							quidu      	"51947D0600AF"
-							client     	@107
-							supplier   	@110
-							vertices   	(list Points
-							    (1594, 713)
-							    (1979, 438))
+							    (684, 672)
+							    (834, 344))
 							line_style 	0))))))
 				logical_presentations 	(list unit_reference_list
 				    (object ClassDiagram "Main"
@@ -3319,7 +3035,7 @@
 					origin_x   	0
 					origin_y   	0
 					items      	(list diagram_item_list
-					    (object CategoryView "Logical View::com::tju::CanCommunication::Operation" @113
+					    (object CategoryView "Logical View::com::tju::CanCommunication::Operation" @110
 						location   	(752, 368)
 						font       	(object Font
 						    size       	10
@@ -3331,7 +3047,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@113
+						    Parent_View 	@110
 						    location   	(608, 284)
 						    fill_color 	13434879
 						    nlines     	2
@@ -3344,7 +3060,7 @@
 						quidu      	"5193431103E6"
 						width      	300
 						height     	180)
-					    (object CategoryView "Logical View::com::tju::CanCommunication::Communication" @114
+					    (object CategoryView "Logical View::com::tju::CanCommunication::Communication" @111
 						location   	(1424, 368)
 						font       	(object Font
 						    size       	10
@@ -3356,7 +3072,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@114
+						    Parent_View 	@111
 						    location   	(1280, 284)
 						    fill_color 	13434879
 						    nlines     	2
@@ -3369,12 +3085,12 @@
 						quidu      	"5193432501A2"
 						width      	300
 						height     	180)
-					    (object ImportView "" @115
+					    (object ImportView "" @112
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"519343600224"
-						client     	@113
-						supplier   	@114
+						client     	@110
+						supplier   	@111
 						vertices   	(list Points
 						    (902, 368)
 						    (1273, 368))
@@ -3389,7 +3105,7 @@
 				origin_x   	0
 				origin_y   	0
 				items      	(list diagram_item_list
-				    (object CategoryView "Logical View::com::tju::CanCommunication" @116
+				    (object CategoryView "Logical View::com::tju::CanCommunication" @113
 					location   	(544, 272)
 					font       	(object Font
 					    size       	10
@@ -3401,7 +3117,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@116
+					    Parent_View 	@113
 					    location   	(400, 188)
 					    fill_color 	13434879
 					    nlines     	2
@@ -3424,7 +3140,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object CategoryView "Logical View::com::tju" @117
+			    (object CategoryView "Logical View::com::tju" @114
 				location   	(400, 240)
 				font       	(object Font
 				    size       	10
@@ -3436,7 +3152,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@117
+				    Parent_View 	@114
 				    location   	(256, 156)
 				    fill_color 	13434879
 				    nlines     	2
@@ -3459,7 +3175,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object CategoryView "Logical View::sun" @118
+		    (object CategoryView "Logical View::sun" @115
 			location   	(208, 272)
 			font       	(object Font
 			    size       	10
@@ -3471,7 +3187,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@118
+			    Parent_View 	@115
 			    location   	(64, 188)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3484,7 +3200,7 @@
 			quidu      	"3E400BBB0153"
 			width      	300
 			height     	180)
-		    (object CategoryView "Logical View::java" @119
+		    (object CategoryView "Logical View::java" @116
 			location   	(656, 272)
 			font       	(object Font
 			    size       	10
@@ -3496,7 +3212,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@119
+			    Parent_View 	@116
 			    location   	(512, 188)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3509,7 +3225,7 @@
 			quidu      	"3E400BBB0160"
 			width      	300
 			height     	180)
-		    (object CategoryView "Logical View::javax" @120
+		    (object CategoryView "Logical View::javax" @117
 			location   	(1104, 272)
 			font       	(object Font
 			    size       	10
@@ -3521,7 +3237,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@120
+			    Parent_View 	@117
 			    location   	(960, 188)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3534,7 +3250,7 @@
 			quidu      	"3E400BC10126"
 			width      	300
 			height     	180)
-		    (object CategoryView "Logical View::org" @121
+		    (object CategoryView "Logical View::org" @118
 			location   	(1568, 272)
 			font       	(object Font
 			    size       	10
@@ -3546,7 +3262,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@121
+			    Parent_View 	@118
 			    location   	(1424, 188)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3568,7 +3284,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object Label @122
+		    (object Label @119
 			location   	(512, 144)
 			font       	(object Font
 			    size       	12
@@ -3583,7 +3299,7 @@
 			max_width  	1006
 			justify    	1
 			label      	"Java 2 Platform, Standard Edition - V 1.4.1")
-		    (object NoteView @123
+		    (object NoteView @120
 			location   	(304, 448)
 			font       	(object Font
 			    size       	10
@@ -3595,7 +3311,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@123
+			    Parent_View 	@120
 			    location   	(141, 388)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3606,7 +3322,7 @@
 			fill_color 	16744448
 			width      	350
 			height     	132)
-		    (object NoteView @124
+		    (object NoteView @121
 			location   	(752, 448)
 			font       	(object Font
 			    size       	10
@@ -3618,7 +3334,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@124
+			    Parent_View 	@121
 			    location   	(589, 388)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3629,7 +3345,7 @@
 			fill_color 	8421631
 			width      	350
 			height     	132)
-		    (object NoteView @125
+		    (object NoteView @122
 			location   	(1200, 448)
 			font       	(object Font
 			    size       	10
@@ -3641,7 +3357,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@125
+			    Parent_View 	@122
 			    location   	(1037, 388)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3652,7 +3368,7 @@
 			fill_color 	12632256
 			width      	350
 			height     	132)
-		    (object NoteView @126
+		    (object NoteView @123
 			location   	(1648, 448)
 			font       	(object Font
 			    size       	10
@@ -3664,7 +3380,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@126
+			    Parent_View 	@123
 			    location   	(1485, 388)
 			    nlines     	2
 			    max_width  	290
@@ -3683,7 +3399,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object CategoryView "Logical View::com" @127
+		    (object CategoryView "Logical View::com" @124
 			location   	(448, 272)
 			font       	(object Font
 			    size       	10
@@ -3695,7 +3411,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@127
+			    Parent_View 	@124
 			    location   	(304, 188)
 			    fill_color 	13434879
 			    nlines     	2
@@ -3803,75 +3519,6 @@
 						language   	"Java"
 						class      	"Logical View::com::tju::CanCommunication::Operation::SendMsgAndCmd"
 						quidu      	"519346B002A7"))
-					physical_presentations 	(list unit_reference_list))
-				    (object SubSystem "Communication"
-					quid       	"519477530152"
-					physical_models 	(list unit_reference_list
-					    (object module "Command" "NotAModuleType" "NotAModulePart"
-						attributes 	(list Attribute_Set
-						    (object Attribute
-							tool       	"Java"
-							name       	"FileName"
-							value      	"C:\\Users\\Administrator\\Desktop\\com\\tju\\CanCommunication\\Communication\\Command.java")
-						    (object Attribute
-							tool       	"Java"
-							name       	"RootPath"
-							value      	"C:\\Users\\Administrator\\Desktop"))
-						quid       	"519477530161"
-						stereotype 	""
-						language   	"Java"
-						class      	"Logical View::com::tju::CanCommunication::Communication::Command"
-						quidu      	"519475FF02D4")
-					    (object module "CmdCommunication" "NotAModuleType" "NotAModulePart"
-						attributes 	(list Attribute_Set
-						    (object Attribute
-							tool       	"Java"
-							name       	"FileName"
-							value      	"C:\\Users\\Administrator\\Desktop\\com\\tju\\CanCommunication\\Communication\\CmdCommunication.java")
-						    (object Attribute
-							tool       	"Java"
-							name       	"RootPath"
-							value      	"C:\\Users\\Administrator\\Desktop"))
-						quid       	"519477530171"
-						stereotype 	""
-						realized_interfaces 	(list realize_rel_list
-						    (object Realize_Relationship
-							quid       	"519477530175"
-							supplier   	"Logical View::com::tju::CanCommunication::Communication::CmdCommunication"
-							quidu      	"5194761D00FF"))
-						language   	"Java"
-						class      	"Logical View::com::tju::CanCommunication::Communication::CmdCommunication"
-						quidu      	"5194761D00FF")
-					    (object module "Rs232Command" "NotAModuleType" "NotAModulePart"
-						attributes 	(list Attribute_Set
-						    (object Attribute
-							tool       	"Java"
-							name       	"FileName"
-							value      	"C:\\Users\\Administrator\\Desktop\\com\\tju\\CanCommunication\\Communication\\Rs232Command.java")
-						    (object Attribute
-							tool       	"Java"
-							name       	"RootPath"
-							value      	"C:\\Users\\Administrator\\Desktop"))
-						quid       	"519477530180"
-						stereotype 	""
-						language   	"Java"
-						class      	"Logical View::com::tju::CanCommunication::Communication::Rs232Command"
-						quidu      	"5194769902C8")
-					    (object module "ReceiveAnswer" "NotAModuleType" "NotAModulePart"
-						attributes 	(list Attribute_Set
-						    (object Attribute
-							tool       	"Java"
-							name       	"FileName"
-							value      	"C:\\Users\\Administrator\\Desktop\\com\\tju\\CanCommunication\\Communication\\ReceiveAnswer.java")
-						    (object Attribute
-							tool       	"Java"
-							name       	"RootPath"
-							value      	"C:\\Users\\Administrator\\Desktop"))
-						quid       	"51947F390054"
-						stereotype 	""
-						language   	"Java"
-						class      	"Logical View::com::tju::CanCommunication::Communication::ReceiveAnswer"
-						quidu      	"51947A130287"))
 					physical_presentations 	(list unit_reference_list)))
 				physical_presentations 	(list unit_reference_list)))
 			physical_presentations 	(list unit_reference_list)))
