@@ -2,14 +2,14 @@ package com.tju.CanCommunication.test;
 
 import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
+import gnu.io.PortInUseException;
 import gnu.io.SerialPort;
-import gnu.io.NoSuchPortException;
 
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Enumeration;
+import java.util.HashSet;
 
 public class TwoWaySerialComm {
 	public TwoWaySerialComm() {
@@ -22,8 +22,16 @@ public class TwoWaySerialComm {
 		if (portIdentifier.isCurrentlyOwned()) {
 			System.out.println("Error: Port is currently in use");
 		} else {
-			CommPort commPort = portIdentifier.open(this.getClass().getName(),
-					2000);
+			CommPort commPort=null;
+			try {
+				commPort = portIdentifier.open(this.getClass()
+						.getName(), 2000);
+			} catch (PortInUseException e) {
+				System.out.println("Port, " + portIdentifier.getName() + ", is in use.");
+			} catch (Exception e) {
+				System.err.println("Failed to open port " + portIdentifier.getName());
+				e.printStackTrace();
+			}
 
 			if (commPort instanceof SerialPort) {
 				SerialPort serialPort = (SerialPort) commPort;
@@ -86,26 +94,13 @@ public class TwoWaySerialComm {
 
 	public static void main(String[] args) {
 
+		DiscoverComm discover = new DiscoverComm();
+		discover.listPorts();
+		HashSet<CommPortIdentifier> res =  discover.getAvailableSerialPorts();
 		try {
-			CommPortIdentifier portIdentifier = CommPortIdentifier.getPortIdentifier("COM8"); //
-			(new TwoWaySerialComm()).connect("COM8");
+			(new TwoWaySerialComm()).connect("COM3");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block e.printStackTrace();
-		}
-
-		try {
-			Enumeration portList = CommPortIdentifier.getPortIdentifiers(); // 得到当前连接上的端口
-			while (portList.hasMoreElements()) {
-				CommPortIdentifier portId = (CommPortIdentifier) portList
-						.nextElement();
-				if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {// 判断如果端口类型是串口
-					// if (portId.getName().equals("COM3")) {
-					// //判断如果COM3端口已经启动就连接
-					System.out.println(portId.getName());
-				}
-			}
-			// }
-		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

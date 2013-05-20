@@ -580,7 +580,7 @@
 				supplier   	@1
 				vertices   	(list Points
 				    (637, 295)
-				    (849, 216))
+				    (1008, 160))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$2" @7
 				Parent_View 	@5
@@ -592,7 +592,7 @@
 				supplier   	@4
 				vertices   	(list Points
 				    (637, 295)
-				    (425, 375))
+				    (425, 374))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$3" @8
 			location   	(661, 400)
@@ -619,7 +619,7 @@
 				supplier   	@2
 				vertices   	(list Points
 				    (661, 400)
-				    (898, 400))
+				    (896, 400))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$5" @10
 				Parent_View 	@8
@@ -658,7 +658,7 @@
 				supplier   	@3
 				vertices   	(list Points
 				    (653, 530)
-				    (882, 636))
+				    (882, 635))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$11" @13
 				Parent_View 	@11
@@ -670,7 +670,7 @@
 				supplier   	@4
 				vertices   	(list Points
 				    (653, 530)
-				    (425, 425))
+				    (425, 424))
 				line_style 	0)))))
 	    (object UseCaseDiagram "Éè¶¨²Ù×÷"
 		quid       	"519337A701B8"
@@ -3129,7 +3129,7 @@
 							    fill_color 	13434879
 							    anchor     	2
 							    nlines     	6
-							    max_width  	431
+							    max_width  	434
 							    justify    	1)
 							width      	452
 							height     	386
@@ -3164,7 +3164,7 @@
 							quidu      	"5194761D00FF"
 							compartment 	(object Compartment
 							    Parent_View 	@107
-							    location   	(1392, 885)
+							    location   	(1388, 885)
 							    font       	(object Font
 								size       	10
 								face       	"Arial"
@@ -3239,7 +3239,7 @@
 							supplier   	@107
 							vertices   	(list Points
 							    (1165, 1088)
-							    (1391, 890))
+							    (1480, 813))
 							line_style 	0)
 						    (object ClassView "Class" "Logical View::com::tju::CanCommunication::Communication::ReceiveAnswer" @110
 							ShowCompartmentStereotypes 	TRUE
@@ -3283,7 +3283,7 @@
 							    fill_color 	13434879
 							    anchor     	2
 							    nlines     	3
-							    max_width  	353
+							    max_width  	359
 							    justify    	1)
 							width      	372
 							height     	236

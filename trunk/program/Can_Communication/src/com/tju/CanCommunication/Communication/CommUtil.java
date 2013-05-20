@@ -1,4 +1,4 @@
-package com.tju.CanCommunication.test;
+package com.tju.CanCommunication.Communication;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,16 +17,17 @@ import gnu.io.UnsupportedCommOperationException;
 
 public class CommUtil implements SerialPortEventListener {
 
-	InputStream inputStream; // 浠庝覆鍙ｆ潵鐨勮緭鍏ユ祦
-	OutputStream outputStream;// 鍚戜覆鍙ｈ緭鍑虹殑娴�
-	SerialPort serialPort; // 涓插彛鐨勫紩鐢�
+	InputStream inputStream; // 从串口来的输入流
+	OutputStream outputStream;// 向串口输出的流
+	SerialPort serialPort; // 串口的引用
 	CommPortIdentifier portId;
+	byte[] readBuffer;
 
 	public CommUtil(Enumeration portList, String name) {
 		while (portList.hasMoreElements()) {
 			CommPortIdentifier temp = (CommPortIdentifier) portList.nextElement();
-			if (temp.getPortType() == CommPortIdentifier.PORT_SERIAL) {// 鍒ゆ柇濡傛灉绔彛绫诲瀷鏄覆鍙�
-				if (temp.getName().equals(name)) { // 鍒ゆ柇濡傛灉绔彛宸茬粡鍚姩灏辫繛鎺�
+			if (temp.getPortType() == CommPortIdentifier.PORT_SERIAL) {// 判断如果端口类型是串口
+				if (temp.getName().equals(name)) { // 判断如果端口已经启动就连接
 					portId = temp;
 				}
 			}
@@ -42,12 +43,12 @@ public class CommUtil implements SerialPortEventListener {
 		} catch (IOException e) {
 		}
 		try {
-			serialPort.addEventListener(this); // 缁欏綋鍓嶄覆鍙ｅぉ鍔犱竴涓洃鍚櫒
+			serialPort.addEventListener(this); // 给当前串口天加一个监听器
 		} catch (TooManyListenersException e) {
 		}
-		serialPort.notifyOnDataAvailable(true);
+		serialPort.notifyOnDataAvailable(true); // 当有数据时通知
 		try {
-			serialPort.setSerialPortParams(2400, SerialPort.DATABITS_8, 
+			serialPort.setSerialPortParams(2400, SerialPort.DATABITS_8, // 设置串口读写参数
 					SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);
 		} catch (UnsupportedCommOperationException e) {
 		}
@@ -66,16 +67,14 @@ public class CommUtil implements SerialPortEventListener {
 		case SerialPortEvent.OUTPUT_BUFFER_EMPTY:
 			break;
 		
-		case SerialPortEvent.DATA_AVAILABLE:
-			byte[] readBuffer = new byte[20];
+		case SerialPortEvent.DATA_AVAILABLE:// 当有可用数据时读取数据,并且给串口返回数据
+			readBuffer = new byte[20];
 
 			try {
 				while (inputStream.available() > 0) {
-					System.out.println(inputStream.available());
+					//System.out.println(inputStream.available());
 					int numBytes = inputStream.read(readBuffer);
-					System.out.println("numByte = "+ numBytes);
 				}
-				System.out.println(new String(readBuffer).trim());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -84,10 +83,7 @@ public class CommUtil implements SerialPortEventListener {
 	}
 	public void send(String content){
 		try {
-			
-			System.out.println(content);		
-			outputStream.write(content.getBytes());
-			
+		outputStream.write(content.getBytes());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -98,6 +94,10 @@ public class CommUtil implements SerialPortEventListener {
 	      serialPort.close();
 	    }
 	  }
+	
+	public String getAnsString(){
+		return new String(readBuffer);
+	}
 
 	
 }

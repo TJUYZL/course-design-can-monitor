@@ -2,14 +2,13 @@
 
 package com.tju.CanCommunication.Communication;
 
+public interface CmdCommunication {
 
-public interface CmdCommunication 
-{
-   
-   /**
-    * @param _sendcmd
-    * @return com.tju.CanCommunication.Communication.ReceiveAnswer
-    * @roseuid 519476840366
-    */
-   public ReceiveAnswer sendCommand(Command _sendcmd);
+	/**
+	 * @param _sendcmd
+	 * @return com.tju.CanCommunication.Communication.ReceiveAnswer
+	 * @roseuid 519476840366
+	 */
+
+	public ReceiveAnswer sendCommand();
 }

@@ -2,87 +2,119 @@
 
 package com.tju.CanCommunication.Operation;
 
+import com.tju.CanCommunication.Communication.Command;
+import com.tju.CanCommunication.Communication.ReceiveAnswer;
+import com.tju.CanCommunication.Communication.Rs232Command;
 
-public class ReadAndDisplay 
-{
-   
-   /**
-    * @roseuid 5193494D0298
-    */
-   public ReadAndDisplay() 
-   {
-    
-   }
-   
-   /**
-    * @roseuid 519351DC02EA
-    */
-   public void getHardwareVersion() 
-   {
-    
-   }
-   
-   /**
-    * @roseuid 519351ED0088
-    */
-   public void getSerialNumber() 
-   {
-    
-   }
-   
-   /**
-    * @roseuid 51935210025E
-    */
-   public void getSJA_RegisterValue() 
-   {
-    
-   }
-   
-   /**
-    * @roseuid 5193522C02AE
-    */
-   public void getSJAErrorFlag() 
-   {
-    
-   }
-   
-   /**
-    * @roseuid 5193523F009C
-    */
-   public void getOtherRegisterValue() 
-   {
-    
-   }
-   
-   /**
-    * @roseuid 5193524802F4
-    */
-   public void displaySendingCmd() 
-   {
-    
-   }
-   
-   /**
-    * @roseuid 5193527B00F7
-    */
-   public void displayReceivingCmd() 
-   {
-    
-   }
-   
-   /**
-    * @roseuid 5193528E0331
-    */
-   public void deleteSignalFromMsg() 
-   {
-    
-   }
-   
-   /**
-    * @roseuid 519352A90219
-    */
-   public void displayData() 
-   {
-    
-   }
+public class ReadAndDisplay {
+
+	/**
+	 * @roseuid 5193494D0298
+	 */
+	public ReadAndDisplay() {
+
+	}
+
+	/**
+	 * @roseuid 519351DC02EA
+	 * 获得软硬件的版本号，使用V命令
+	 */
+	public void getHardwareVersion() {
+		Command newCmd = new Command("V");
+		Rs232Command rs232 = new Rs232Command(newCmd,
+			CanInformation._portName);
+		ReceiveAnswer ans = rs232.sendCommand();
+	}
+	
+
+	/**
+	 * @roseuid 519351ED0088
+	 * 使用N命令获得硬件序列号
+	 */
+	public void getSerialNumber() {
+		Command newCmd = new Command("N");
+		Rs232Command rs232 = new Rs232Command(newCmd,
+			CanInformation._portName);
+		ReceiveAnswer ans = rs232.sendCommand();
+	}
+
+	/**
+	 * @roseuid 51935210025E
+	 * 读取SJA寄存器的值,使用Grr命令
+	 */
+	public void getSJA_RegisterValue(String value) {
+		Command newCmd = new Command("G" + value);
+		Rs232Command rs232 = new Rs232Command(newCmd,
+			CanInformation._portName);
+		ReceiveAnswer ans = rs232.sendCommand();
+		
+		System.out.println("ans = " + ans);
+	}
+
+	/**
+	 * @roseuid 5193522C02AE
+	 * 使用F命令读取SJA ErrorFlag
+	 */
+	public void getSJAErrorFlag() {
+		Command newCmd = new Command("F" );
+		Rs232Command rs232 = new Rs232Command(newCmd,
+			CanInformation._portName);
+		ReceiveAnswer ans = rs232.sendCommand();
+	}
+
+	/**
+	 * @roseuid 5193523F009C
+	 * 使用F命令读取SJA1000’s SR,ALC,ECR,RXERR,TXERR register from CAN
+	 */
+	public void getOtherRegisterValue() {
+		Command newCmd = new Command("F" );
+		Rs232Command rs232 = new Rs232Command(newCmd,
+			CanInformation._portName);
+		ReceiveAnswer ans = rs232.sendCommand();
+	}
+
+	/**
+	 * @roseuid 5193524802F4
+	 * 
+	 */
+	public void displaySendingCmd() {
+		
+	}
+
+	/**
+	 * @roseuid 5193527B00F7
+	 */
+	public void displayReceivingCmd() {
+		
+	}
+
+	/**
+	 * @roseuid 5193528E0331
+	 * 处理获得的消息，从消息中删除信号
+	 * 
+	 */
+	public String deleteSignalFromMsg(String value) {
+		String msg = "";
+		char cmd = value.charAt(0);
+		switch (cmd){
+			case 't':
+			case 'r':
+				int length_t = value.charAt(4) - '0';
+				msg = value.substring(5, 5+length_t);
+				break;
+			case 'T':
+			case 'R':
+				int length_T = value.charAt(9) - '0';
+				msg = value.substring(10,10+length_T);
+				break;				
+		}
+		return msg;			
+	}
+
+	/**
+	 * @roseuid 519352A90219
+	 */
+	public void displayData() {
+		
+	}
 }
